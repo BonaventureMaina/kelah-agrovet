@@ -1,0 +1,227 @@
+/**
+ * Responsive Styles - Mobile-First Media Queries
+ * 
+ * Approach: Mobile-first (enhance UP from mobile)
+ * Why: Better performance on mobile devices (70%+ of traffic)
+ * 
+ * Breakpoints:
+ * - Mobile: Default (< 768px)
+ * - Tablet: 768px - 1024px
+ * - Desktop: > 1024px
+ */
+
+/* ==========================================
+   TABLET (768px and up)
+   ========================================== */
+
+@media screen and (min-width: 768px) {
+    
+    /* Typography scales up */
+    h1 {
+        font-size: var(--font-size-5xl);
+    }
+    
+    h2 {
+        font-size: var(--font-size-4xl);
+    }
+    
+    .hero__title {
+        font-size: var(--font-size-4xl);
+    }
+    
+    /* Container padding increases */
+    .container {
+        padding-left: var(--space-xl);
+        padding-right: var(--space-xl);
+    }
+    
+    /* Header: Show actions inline, hide toggle */
+    .header__menu-toggle {
+        display: none;
+    }
+    
+    .header__actions {
+        display: flex !important;
+        flex-direction: row;
+        position: static;
+        background: none;
+        padding: 0;
+        box-shadow: none;
+    }
+    
+    /* Hero: Horizontal CTAs */
+    .hero {
+        min-height: 500px;
+    }
+    
+    /* ADD THIS: Two-column layout on desktop */
+    .hero__wrapper {
+        grid-template-columns: 1fr 1fr;  /* Equal columns */
+        gap: var(--space-4xl);
+    }
+    
+    .hero__content {
+        max-width: 600px;  /* Keep existing */
+    }
+    
+    .hero__carousel {
+        max-width: 600px;
+        height: 400px;
+    }
+    
+    .carousel__slide {
+        height: 400px;
+    }
+    
+    .hero__cta {
+        flex-direction: row;
+    }
+    
+    /* Services: 2 columns */
+    .services__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-2xl);
+    }
+    
+    /* Products: 2 columns */
+    .products__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Contact: 2 columns */
+    .contact__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    /* Utility classes */
+    .hide-mobile {
+        display: block;
+    }
+    
+    .hide-desktop {
+        display: none;
+    }
+
+    .testimonials__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer__main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ==========================================
+   DESKTOP (1024px and up)
+   ========================================== */
+
+@media screen and (min-width: 1024px) {
+    
+    /* Larger section spacing */
+    section {
+        padding-top: var(--space-4xl);
+        padding-bottom: var(--space-4xl);
+    }
+    
+    /* Hero: Full height option */
+    .hero {
+        min-height: 100px;
+    }
+    
+    .hero__content {
+        max-width: 700px;
+    }
+    
+    /* Services: 3 columns on large screens */
+    .services__grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    /* Products: 5 columns for all categories */
+    .products__grid {
+        grid-template-columns: repeat(5, 1fr);
+        gap: var(--space-xl);
+    }
+    
+    /* Contact: 4 columns */
+    .contact__grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    /* Buttons: Slight size increase */
+    .btn--large {
+        padding: var(--space-xl) var(--space-3xl);
+        font-size: var(--font-size-xl);
+    }
+
+    .testimonials__grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: var(--space-2xl);
+    }
+
+    .footer__main {
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: var(--space-3xl);
+    }
+}
+
+/* ==========================================
+   LARGE DESKTOP (1440px and up)
+   ========================================== */
+
+@media screen and (min-width: 1440px) {
+    
+    /* Container slight increase */
+    .container {
+        max-width: 1400px;
+    }
+    
+    /* Hero even larger */
+    .hero {
+        min-height: 800px;
+    }
+    
+    .hero__title {
+        font-size: var(--font-size-5xl);
+    }
+}
+
+/* ==========================================
+   PRINT STYLES
+   ========================================== */
+
+@media print {
+    /* Hide interactive elements */
+    .header,
+    .hero__cta,
+    .btn,
+    .footer {
+        display: none;
+    }
+    
+    /* Ensure readability */
+    body {
+        color: #000;
+        background: #fff;
+    }
+    
+    /* Break pages sensibly */
+    section {
+        page-break-inside: avoid;
+    }
+}
+
+/* ==========================================
+   DARK MODE SUPPORT (Future Enhancement)
+   ========================================== */
+
+@media (prefers-color-scheme: dark) {
+    /* 
+     * Currently commented out - implement when needed
+     * 
+     * :root {
+     *     --color-background: #1a1a1a;
+     *     --color-text: #f5f5f5;
+     * }
+     */
+}

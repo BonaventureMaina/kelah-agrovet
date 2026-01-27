@@ -1,0 +1,91 @@
+/**
+ * CSS Reset - Browser Normalization
+ * 
+ * Purpose: Removes browser default styles that cause inconsistencies
+ * Modern alternative to normalize.css - lighter and more targeted
+ * 
+ * Why we need this:
+ * - Browsers apply different default margins, paddings, line-heights
+ * - Creates predictable baseline for our custom styles
+ * - Prevents "quirks mode" rendering issues
+ */
+
+/* Box-sizing: Industry standard approach */
+*,
+*::before,
+*::after {
+    box-sizing: border-box; /* Padding/border included in width calculations */
+    margin: 0;
+    padding: 0;
+}
+
+/* Root element normalization */
+html {
+    /* Font-size: 100% = 16px default, allows user browser zoom settings */
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased; /* Better font rendering on Mac/iOS */
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth; /* Smooth anchor link scrolling */
+}
+
+/* Body defaults */
+body {
+    line-height: 1.6; /* Readability standard (1.5-1.8 range) */
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+}
+
+/* Media elements */
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block; /* Removes inline spacing issues */
+    max-width: 100%; /* Responsive by default */
+    height: auto; /* Maintains aspect ratio */
+}
+
+/* Form elements */
+input,
+button,
+textarea,
+select {
+    font: inherit; /* Inherits from parent, not browser default */
+}
+
+/* Remove button default styles */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Anchor tag defaults */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* List defaults */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Remove focus outline for mouse users, keep for keyboard navigation */
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Accessibility: Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

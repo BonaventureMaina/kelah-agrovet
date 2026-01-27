@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Realistic handshake with money/credit symbols -->
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#2D5016" opacity="0.1"/>
+  
+  <!-- Realistic handshake -->
+  <g transform="translate(32, 32)">
+    
+    <!-- Left hand (forearm and hand) -->
+    <g>
+      <!-- Forearm/wrist -->
+      <rect x="-22" y="0" width="8" height="4" rx="2" fill="#8B4513"/>
+      
+      <!-- Hand palm -->
+      <ellipse cx="-13" cy="2" rx="3" ry="4" fill="#A0522D"/>
+      
+      <!-- Thumb -->
+      <ellipse cx="-12" cy="-1" rx="2" ry="3" fill="#A0522D" transform="rotate(-30 -12 -1)"/>
+      
+      <!-- Fingers gripping -->
+      <ellipse cx="-10" cy="4" rx="1.5" ry="3" fill="#A0522D"/>
+      <ellipse cx="-8" cy="5" rx="1.5" ry="3" fill="#A0522D"/>
+      <ellipse cx="-6" cy="5.5" rx="1.5" ry="2.5" fill="#A0522D"/>
+    </g>
+    
+    <!-- Right hand (forearm and hand) -->
+    <g>
+      <!-- Forearm/wrist -->
+      <rect x="14" y="0" width="8" height="4" rx="2" fill="#2D5016"/>
+      
+      <!-- Hand palm -->
+      <ellipse cx="13" cy="2" rx="3" ry="4" fill="#3A6B1E"/>
+      
+      <!-- Thumb -->
+      <ellipse cx="12" cy="-1" rx="2" ry="3" fill="#3A6B1E" transform="rotate(30 12 -1)"/>
+      
+      <!-- Fingers gripping -->
+      <ellipse cx="10" cy="4" rx="1.5" ry="3" fill="#3A6B1E"/>
+      <ellipse cx="8" cy="5" rx="1.5" ry="3" fill="#3A6B1E"/>
+      <ellipse cx="6" cy="5.5" rx="1.5" ry="2.5" fill="#3A6B1E"/>
+    </g>
+    
+    <!-- Clasped area (where hands meet) -->
+    <ellipse cx="0" cy="3" rx="6" ry="5" fill="#8B4513" opacity="0.3"/>
+    
+    <!-- Coins floating above handshake -->
+    <g transform="translate(-8, -10)">
+      <!-- Gold coin -->
+      <circle cx="0" cy="0" r="4" fill="#F39C12"/>
+      <circle cx="0" cy="0" r="3" fill="#F1C40F"/>
+      <text x="0" y="1.5" font-size="3" font-weight="bold" fill="#8B4513" text-anchor="middle">KSH</text>
+    </g>
+    
+    <g transform="translate(0, -12)">
+      <!-- Silver coin -->
+      <circle cx="0" cy="0" r="3.5" fill="#95A5A6"/>
+      <circle cx="0" cy="0" r="2.5" fill="#BDC3C7"/>
+      <circle cx="0" cy="0" r="1.5" fill="#95A5A6"/>
+    </g>
+    
+    <g transform="translate(8, -9)">
+      <!-- Bronze coin -->
+      <circle cx="0" cy="0" r="3" fill="#E67E22"/>
+      <circle cx="0" cy="0" r="2" fill="#D35400"/>
+      <text x="0" y="1" font-size="2.5" font-weight="bold" fill="#F5E6D3" text-anchor="middle">$</text>
+    </g>
+    
+    <!-- Calendar/time symbol (indicates flexible payment schedule) -->
+    <g transform="translate(12, -14)" opacity="0.6">
+      <rect x="-3" y="0" width="6" height="7" rx="0.5" fill="#ECF0F1" stroke="#2D5016" stroke-width="0.5"/>
+      <rect x="-3" y="0" width="6" height="1.5" fill="#2D5016"/>
+      <line x1="-2" y1="-0.5" x2="-2" y2="1" stroke="#ECF0F1" stroke-width="0.5"/>
+      <line x1="2" y1="-0.5" x2="2" y2="1" stroke="#ECF0F1" stroke-width="0.5"/>
+      <!-- Checkmarks on calendar -->
+      <path d="M -1.5,3.5 L -0.5,4.5 L 1,3" fill="none" stroke="#27AE60" stroke-width="0.7" stroke-linecap="round"/>
+      <path d="M -1.5,5.5 L -0.5,6.5 L 1,5" fill="none" stroke="#27AE60" stroke-width="0.7" stroke-linecap="round"/>
+    </g>
+    
+  </g>
+</svg>

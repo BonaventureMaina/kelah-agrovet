@@ -1,0 +1,145 @@
+/**
+ * CSS Custom Properties (Variables) - Design Tokens
+ * 
+ * Purpose: Single source of truth for design values
+ * Benefits:
+ * - Change brand colors in one place
+ * - Maintain design consistency
+ * - Easy theme switching (dark mode future possibility)
+ * - Better developer experience
+ * 
+ * Industry Practice: Called "Design Tokens" in design systems
+ */
+
+:root {
+    /* ==========================================
+       COLOR PALETTE - Based on Brand Strategy
+       ========================================== */
+    
+    /* Primary Colors */
+    --color-primary: #2D5016;        /* Forest Green - Trust, veterinary health */
+    --color-primary-light: #3A6B1E;  /* Lighter variant for hovers */
+    --color-primary-dark: #1F3810;   /* Darker variant for text */
+    
+    /* Secondary Colors */
+    --color-secondary: #8B4513;      /* Warm Earth - Traditional, grounded */
+    --color-secondary-light: #A0522D;
+    
+    /* Accent Colors */
+    --color-accent: #E67E22;         /* Vibrant Orange - CTAs, energy */
+    --color-accent-hover: #D35400;   /* Darker orange for hover states */
+    
+    /* Supporting Colors */
+    --color-sky: #4A90E2;            /* Sky Blue - Professionalism */
+    --color-cream: #F5E6D3;          /* Harvest Cream - Warmth, backgrounds */
+    
+    /* Neutrals */
+    --color-charcoal: #2C3E50;       /* Text primary */
+    --color-gray: #7F8C8D;           /* Text secondary */
+    --color-light-gray: #ECF0F1;     /* Backgrounds */
+    --color-white: #FFFFFF;
+    
+    /* Semantic Colors */
+    --color-success: #27AE60;        /* Success messages */
+    --color-error: #E74C3C;          /* Error messages */
+    --color-warning: #F39C12;        /* Warning messages */
+    
+    
+    /* ==========================================
+       TYPOGRAPHY
+       ========================================== */
+    
+    /* Font Families */
+    --font-heading: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    --font-body: 'Open Sans', 'Segoe UI', Arial, sans-serif;
+    
+    /* Font Sizes - Mobile First (base 16px) */
+    --font-size-xs: 0.75rem;    /* 12px */
+    --font-size-sm: 0.875rem;   /* 14px */
+    --font-size-base: 1rem;     /* 16px */
+    --font-size-lg: 1.125rem;   /* 18px */
+    --font-size-xl: 1.25rem;    /* 20px */
+    --font-size-2xl: 1.5rem;    /* 24px */
+    --font-size-3xl: 1.875rem;  /* 30px */
+    --font-size-4xl: 2.25rem;   /* 36px */
+    --font-size-5xl: 3rem;      /* 48px */
+    
+    /* Font Weights */
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    
+    /* Line Heights */
+    --line-height-tight: 1.2;
+    --line-height-normal: 1.6;
+    --line-height-relaxed: 1.8;
+    
+    
+    /* ==========================================
+       SPACING - 8pt Grid System
+       ========================================== */
+    
+    /* Base unit: 8px - ensures visual consistency */
+    --space-xs: 0.25rem;    /* 4px */
+    --space-sm: 0.5rem;     /* 8px */
+    --space-md: 1rem;       /* 16px */
+    --space-lg: 1.5rem;     /* 24px */
+    --space-xl: 2rem;       /* 32px */
+    --space-2xl: 3rem;      /* 48px */
+    --space-3xl: 4rem;      /* 64px */
+    --space-4xl: 6rem;      /* 96px */
+    
+    
+    /* ==========================================
+       LAYOUT
+       ========================================== */
+    
+    --container-max-width: 1200px;
+    --container-padding: var(--space-md);
+    
+    /* Z-index layers - prevents z-index chaos */
+    --z-header: 100;
+    --z-modal: 200;
+    --z-tooltip: 300;
+    
+    
+    /* ==========================================
+       BORDERS & RADIUS
+       ========================================== */
+    
+    --border-width: 1px;
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+    --border-radius-full: 9999px;  /* Pill shape */
+    
+    
+    /* ==========================================
+       SHADOWS - Subtle depth
+       ========================================== */
+    
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+    
+    
+    /* ==========================================
+       TRANSITIONS - Consistent animation timing
+       ========================================== */
+    
+    --transition-fast: 150ms ease-in-out;
+    --transition-base: 250ms ease-in-out;
+    --transition-slow: 350ms ease-in-out;
+    
+    
+    /* ==========================================
+       BREAKPOINTS - For responsive design
+       Note: CSS can't use these directly in media queries
+       Documented here for consistency with JS
+       ========================================== */
+    
+    /* Mobile: < 768px (default, mobile-first) */
+    /* Tablet: 768px - 1024px */
+    /* Desktop: > 1024px */
+}

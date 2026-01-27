@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <!-- Delivery icon - Truck with motion lines -->
+  
+  <!-- Background circle -->
+  <circle cx="32" cy="32" r="30" fill="#2D5016" opacity="0.1"/>
+  
+  <!-- Delivery truck -->
+  <g transform="translate(32, 32)">
+    <!-- Cargo area (back) -->
+    <rect x="-14" y="-6" width="12" height="10" rx="1" fill="#2D5016"/>
+    <rect x="-13" y="-5" width="10" height="8" rx="0.5" fill="#F5E6D3"/>
+    
+    <!-- Package icon in cargo -->
+    <rect x="-10" y="-3" width="4" height="4" fill="#E67E22" opacity="0.8"/>
+    <line x1="-10" y1="-1" x2="-6" y2="-1" stroke="#F5E6D3" stroke-width="0.5"/>
+    <line x1="-8" y1="-3" x2="-8" y2="1" stroke="#F5E6D3" stroke-width="0.5"/>
+    
+    <!-- Cab (front) -->
+    <rect x="-2" y="-4" width="8" height="8" rx="1" fill="#2D5016"/>
+    
+    <!-- Windshield -->
+    <rect x="-1" y="-3" width="4" height="3" rx="0.5" fill="#4A90E2" opacity="0.6"/>
+    
+    <!-- Connection between cargo and cab -->
+    <rect x="-3" y="-2" width="2" height="4" fill="#2D5016"/>
+    
+    <!-- Wheels -->
+    <circle cx="-10" cy="5" r="3" fill="#2C3E50"/>
+    <circle cx="-10" cy="5" r="1.5" fill="#ECF0F1"/>
+    
+    <circle cx="2" cy="5" r="3" fill="#2C3E50"/>
+    <circle cx="2" cy="5" r="1.5" fill="#ECF0F1"/>
+    
+    <!-- Motion lines (speed) -->
+    <line x1="-18" y1="-8" x2="-16" y2="-8" stroke="#E67E22" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="-19" y1="-4" x2="-15" y2="-4" stroke="#E67E22" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+    <line x1="-18" y1="0" x2="-16" y2="0" stroke="#E67E22" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  </g>
+  
+  <!-- Kenya map outline (subtle) -->
+  <g transform="translate(48, 48)" opacity="0.3">
+    <path d="M 0,-6 L 2,-4 L 3,-2 L 3,2 L 1,4 L -1,4 L -2,2 L -2,-2 L 0,-4 Z" fill="#2D5016" stroke="#2D5016" stroke-width="0.5"/>
+  </g>
+</svg>

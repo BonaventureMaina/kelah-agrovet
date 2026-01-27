@@ -1,0 +1,658 @@
+/**
+ * Components - Reusable UI Elements
+ * 
+ * Purpose: Self-contained, reusable interface components
+ * Methodology: BEM-inspired naming (Block__Element--Modifier)
+ * 
+ * Naming Convention:
+ * .component = Block
+ * .component__element = Element within block
+ * .component--modifier = Variant of block
+ */
+
+/* ==========================================
+   BUTTONS - Primary CTA components
+   ========================================== */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--space-sm);
+    
+    padding: var(--space-md) var(--space-xl);
+    font-family: var(--font-heading);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-semibold);
+    text-align: center;
+    
+    border: var(--border-width) solid transparent;
+    border-radius: var(--border-radius-md);
+    
+    cursor: pointer;
+    transition: all var(--transition-base);
+    
+    /* Prevent text selection on double-click */
+    user-select: none;
+}
+
+/* Primary Button - Main CTAs */
+.btn--primary {
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    box-shadow: var(--shadow-md);
+}
+
+.btn--primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+.btn--primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Button - Less emphasis */
+.btn--secondary {
+    background-color: transparent;
+    color: var(--color-white);
+    border-color: var(--color-white);
+}
+
+.btn--secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Phone Button - Direct action */
+.btn--phone {
+    background-color: var(--color-success);
+    color: var(--color-white);
+}
+
+.btn--phone:hover {
+    background-color: #229954;
+}
+
+/* WhatsApp Button - Brand color */
+.btn--whatsapp {
+    background-color: #25D366;  /* WhatsApp official green */
+    color: var(--color-white);
+}
+
+.btn--whatsapp:hover {
+    background-color: #1EBE57;
+}
+
+/* Size Variants */
+.btn--large {
+    padding: var(--space-lg) var(--space-2xl);
+    font-size: var(--font-size-lg);
+}
+
+.btn--small {
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-sm);
+}
+
+/* Icon in button */
+.btn .icon {
+    font-size: var(--font-size-lg);
+}
+
+/* Image icon in button (for SVG icons) */
+.btn__icon {
+    width: 20px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: var(--space-xs);
+}
+
+.btn--large .btn__icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* ==========================================
+   CARDS - Content containers
+   ========================================== */
+
+/* Service Card */
+.service-card {
+    background-color: var(--color-white);
+    padding: var(--space-xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    text-align: center;
+}
+
+.service-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+.service-card__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-cream);
+    border-radius: var(--border-radius-full);
+}
+
+.service-card__icon img {
+    width: 48px;
+    height: 48px;
+}
+
+.service-card__title {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-primary);
+}
+
+.service-card__description {
+    color: var(--color-gray);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Product Category Card */
+/* Product Category Card - ENHANCED */
+.product-category {
+    position: relative;
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+}
+
+.product-category::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to top,
+        rgba(45, 80, 22, 0.85) 0%,
+        rgba(45, 80, 22, 0.3) 50%,
+        transparent 100%
+    );
+    z-index: 2;
+    transition: opacity var(--transition-base);
+}
+
+.product-category:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.product-category:hover::before {
+    opacity: 0.7;
+}
+
+.product-category__image {
+    width: 100%;
+    aspect-ratio: 4 / 3;  /* Consistent image ratio */
+    overflow: hidden;
+}
+
+.product-category__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-slow);
+}
+
+.product-category:hover .product-category__image img {
+    transform: scale(1.1);
+}
+
+.product-category__title {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: var(--space-xl);
+    color: var(--color-white);
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    text-align: center;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    z-index: 3;
+    transform: translateY(0);
+    transition: all var(--transition-base);
+}
+
+/* Product category content wrapper */
+.product-category__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 3;
+    padding: var(--space-lg);
+    transform: translateY(0);
+    transition: all var(--transition-base);
+}
+
+/* Product description - hidden by default, shows on hover */
+.product-category__description {
+    color: var(--color-cream);
+    font-size: var(--font-size-sm);
+    text-align: center;
+    margin-top: var(--space-sm);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all var(--transition-base);
+}
+
+.product-category:hover .product-category__description {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-category:hover .product-category__title {
+    transform: translateY(-8px);
+    font-size: var(--font-size-2xl);
+}
+
+/* Contact Card */
+/* Contact Card - ENHANCED */
+.contact__card {
+    background-color: var(--color-white);
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+}
+
+.contact__card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+/* Contact icon */
+.contact__icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--space-lg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact__icon img {
+    width: 64px;
+    height: 64px;
+}
+
+/* Contact card variants */
+.contact__card--phone:hover {
+    border-color: #27AE60;
+    background: linear-gradient(to bottom, #ffffff, #f0fff4);
+}
+
+.contact__card--whatsapp:hover {
+    border-color: #25D366;
+    background: linear-gradient(to bottom, #ffffff, #f0fff0);
+}
+
+.contact__card--location:hover {
+    border-color: #E67E22;
+    background: linear-gradient(to bottom, #ffffff, #fff5f0);
+}
+
+.contact__card--credit:hover {
+    border-color: #4A90E2;
+    background: linear-gradient(to bottom, #ffffff, #f0f8ff);
+}
+
+.contact__card h3 {
+    font-size: var(--font-size-xl);
+    margin-bottom: var(--space-md);
+    color: var(--color-primary-dark);
+}
+
+/* Contact link - PRIMARY ACTION */
+.contact__link--primary {
+    display: inline-block;
+    color: var(--color-white);
+    background-color: var(--color-accent);
+    font-weight: var(--font-weight-bold);
+    font-size: var(--font-size-xl);
+    padding: var(--space-md) var(--space-xl);
+    border-radius: var(--border-radius-md);
+    margin: var(--space-md) 0;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-sm);
+}
+
+.contact__link--primary:hover {
+    background-color: var(--color-accent-hover);
+    transform: scale(1.05);
+    box-shadow: var(--shadow-md);
+    text-decoration: none;
+}
+
+/* Availability text */
+.contact__availability {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+    margin-top: var(--space-sm);
+    font-style: italic;
+}
+
+/* Address and hours */
+.contact__address {
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-charcoal);
+    margin-bottom: var(--space-sm);
+}
+
+.contact__hours {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+    line-height: var(--line-height-relaxed);
+}
+
+/* Urgency banner */
+.contact__banner {
+    margin-top: var(--space-3xl);
+    padding: var(--space-xl);
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-hover));
+    border-radius: var(--border-radius-lg);
+    text-align: center;
+    box-shadow: var(--shadow-lg);
+}
+
+.contact__banner p {
+    color: var(--color-white);
+    font-size: var(--font-size-lg);
+    margin: 0;
+}
+
+.contact__banner strong {
+    font-weight: var(--font-weight-bold);
+}
+
+/* ==========================================
+   TESTIMONIALS - ENHANCED CARDS
+   ========================================== */
+
+/* Testimonials grid */
+.testimonials__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+}
+
+/* Individual testimonial card */
+.testimonial-card {
+    background-color: var(--color-white);
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    font-size: 120px;
+    color: var(--color-cream);
+    font-family: Georgia, serif;
+    line-height: 1;
+    z-index: 1;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-xl);
+}
+
+/* Star rating */
+.testimonial-card__rating {
+    display: flex;
+    gap: 4px;
+    margin-bottom: var(--space-md);
+    position: relative;
+    z-index: 2;
+}
+
+.testimonial-card__rating .star {
+    color: #F39C12;
+    font-size: var(--font-size-xl);
+}
+
+/* Quote text */
+.testimonial-card__quote {
+    font-size: var(--font-size-lg);
+    line-height: var(--line-height-relaxed);
+    color: var(--color-charcoal);
+    margin-bottom: var(--space-xl);
+    position: relative;
+    z-index: 2;
+}
+
+/* Author section */
+.testimonial-card__author {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    position: relative;
+    z-index: 2;
+}
+
+/* Avatar circle with initials */
+.testimonial-card__avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-primary), var(--color-primary-light));
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-bold);
+    flex-shrink: 0;
+    box-shadow: var(--shadow-md);
+}
+
+/* Author info */
+.testimonial-card__info {
+    flex: 1;
+}
+
+.testimonial-card__name {
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary-dark);
+    margin-bottom: 2px;
+    font-size: var(--font-size-base);
+}
+
+.testimonial-card__role {
+    font-size: var(--font-size-sm);
+    color: var(--color-gray);
+    margin: 0;
+}
+
+/* ==========================================
+   SECTION HEADERS
+   ========================================== */
+
+.section__title {
+    text-align: center;
+    font-size: var(--font-size-3xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+.section__subtitle {
+    text-align: center;
+    font-size: var(--font-size-lg);
+    color: var(--color-gray);
+    margin-bottom: var(--space-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ==========================================
+   LOGO - Header branding
+   ========================================== */
+
+/* Logo link container - CLEAN NO BACKGROUND */
+.logo-link {
+    display: flex;
+    align-items: center;
+    gap: var(--space-lg);  /* More gap between logo and text */
+    text-decoration: none;
+    transition: opacity var(--transition-fast);
+}
+
+.logo-link:hover {
+    opacity: 0.85;
+}
+
+/* Logo image styling - INCREASED SIZE */
+.logo-img {
+    height: 140px;  /* Increased from 60px */
+    width: auto;
+    display: block;
+    flex-shrink: 0;
+}
+
+/* Logo text styling */
+.logo-text {
+    font-family: var(--font-heading);
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-primary);
+    letter-spacing: 2px;
+    white-space: nowrap;
+    line-height: 1;  /* Tight line height for centering */
+}
+
+/* Responsive logo sizing - KEEP TEXT VISIBLE */
+@media screen and (max-width: 768px) {
+    .logo-img {
+        height: 100px;  /* Large enough to see on mobile */
+    }
+    
+    .logo-text {
+        font-size: var(--font-size-xl);  /* 20px on mobile */
+        letter-spacing: 1px;
+        /* Text now VISIBLE on mobile */
+    }
+}
+
+/* Very small phones only */
+@media screen and (max-width: 480px) {
+    .logo-img {
+        height: 80px;
+    }
+    
+    .logo-text {
+        font-size: var(--font-size-lg);  /* 18px on very small screens */
+        letter-spacing: 0.5px;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .logo-text {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* ==========================================
+   BACK TO TOP BUTTON
+   ========================================== */
+
+.back-to-top {
+    position: fixed;
+    bottom: var(--space-2xl);
+    right: var(--space-2xl);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow-lg);
+    cursor: pointer;
+    z-index: 50;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all var(--transition-base);
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.back-to-top:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-xl);
+}
+
+.back-to-top:active {
+    transform: translateY(0);
+}
+
+/* ==========================================
+   HERO TRUST BADGES
+   ========================================== */
+
+.hero__trust-badges {
+    display: flex;
+    gap: var(--space-xl);
+    margin-top: var(--space-2xl);
+    flex-wrap: wrap;
+}
+
+.trust-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--space-sm);
+    color: var(--color-white);
+}
+
+.trust-badge__icon {
+    width: 24px;
+    height: 24px;
+    background-color: var(--color-accent);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.trust-badge__text {
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-semibold);
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}

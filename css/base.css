@@ -1,0 +1,161 @@
+/**
+ * Base Styles - Foundation Layer
+ * 
+ * Purpose: Global styles applied across entire site
+ * Builds on reset.css with branded typography and base elements
+ */
+
+/* ==========================================
+   BODY & GLOBAL STYLES
+   ========================================== */
+
+/* Root element normalization */
+html {
+    /* Font-size: 100% = 16px default, allows user browser zoom settings */
+    font-size: 100%;
+    -webkit-font-smoothing: antialiased; /* Better font rendering on Mac/iOS */
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth; /* Smooth anchor link scrolling */
+    scroll-padding-top: 120px; /* Offset for sticky header when jumping to sections */
+}
+
+body {
+    font-family: var(--font-body);
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-normal);
+    line-height: var(--line-height-normal);
+    color: var(--color-charcoal);
+    background-color: var(--color-white);
+}
+
+/* ==========================================
+   TYPOGRAPHY HIERARCHY
+   ========================================== */
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: var(--font-weight-bold);
+    line-height: var(--line-height-tight);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-md);
+}
+
+h1 {
+    font-size: var(--font-size-4xl);
+}
+
+h2 {
+    font-size: var(--font-size-3xl);
+}
+
+h3 {
+    font-size: var(--font-size-2xl);
+}
+
+h4 {
+    font-size: var(--font-size-xl);
+}
+
+h5 {
+    font-size: var(--font-size-lg);
+}
+
+h6 {
+    font-size: var(--font-size-base);
+}
+
+p {
+    margin-bottom: var(--space-md);
+    color: var(--color-charcoal);
+}
+
+/* ==========================================
+   LINKS
+   ========================================== */
+
+a {
+    color: var(--color-primary);
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--color-primary-light);
+}
+
+/* Focus styles for accessibility (keyboard navigation) */
+a:focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 2px;
+}
+
+/* ==========================================
+   CONTAINER - Layout wrapper
+   ========================================== */
+
+.container {
+    max-width: var(--container-max-width);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: var(--container-padding);
+    padding-right: var(--container-padding);
+    width: 100%;
+}
+
+/* ==========================================
+   SECTION SPACING
+   ========================================== */
+
+section {
+    padding-top: var(--space-3xl);
+    padding-bottom: var(--space-3xl);
+}
+
+/* ==========================================
+   UTILITY CLASSES
+   ========================================== */
+
+/* Screen reader only (accessibility) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* Hide on mobile */
+.hide-mobile {
+    display: none;
+}
+
+/* Hide on desktop */
+.hide-desktop {
+    display: block;
+}
+
+/* Text utilities */
+.text-center {
+    text-align: center;
+}
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-gray);
+}
+
+/* Loading state - prevents flash of unstyled content */
+body.loading {
+    opacity: 0;
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.3s ease-in;
+}
