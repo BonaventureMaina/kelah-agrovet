@@ -444,3 +444,111 @@
         grid-template-columns: repeat(3, 1fr);
     }
 }
+
+/* ==========================================
+   AUDIENCE SECTION - WHO WE SERVE
+   ========================================== */
+
+.audience {
+    background-color: var(--color-white);
+    padding-top: var(--space-4xl);
+    padding-bottom: var(--space-4xl);
+}
+
+.audience__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-2xl);
+    margin-top: var(--space-2xl);
+}
+
+/* Audience card */
+.audience-card {
+    background: linear-gradient(to bottom, var(--color-white), var(--color-light-gray));
+    padding: var(--space-2xl);
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    border: 2px solid transparent;
+    position: relative;
+}
+
+.audience-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--color-primary);
+}
+
+/* Featured card (Agrovets) */
+.audience-card--featured {
+    border: 2px solid var(--color-accent);
+    background: linear-gradient(to bottom, #FFF9F0, var(--color-cream));
+}
+
+.audience-card--featured:hover {
+    border-color: var(--color-accent-hover);
+}
+
+/* Badge for featured card */
+.audience-card__badge {
+    position: absolute;
+    top: -12px;
+    right: var(--space-xl);
+    background-color: var(--color-accent);
+    color: var(--color-white);
+    padding: var(--space-sm) var(--space-lg);
+    border-radius: var(--border-radius-full);
+    font-size: var(--font-size-sm);
+    font-weight: var(--font-weight-bold);
+    box-shadow: var(--shadow-md);
+}
+
+/* Icon */
+.audience-card__icon {
+    font-size: 64px;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+/* Title */
+.audience-card__title {
+    font-size: var(--font-size-2xl);
+    color: var(--color-primary-dark);
+    margin-bottom: var(--space-md);
+    text-align: center;
+}
+
+/* Description */
+.audience-card__description {
+    color: var(--color-charcoal);
+    line-height: var(--line-height-relaxed);
+    margin-bottom: var(--space-lg);
+    text-align: center;
+}
+
+/* Features list */
+.audience-card__features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-xl) 0;
+}
+
+.audience-card__features li {
+    color: var(--color-charcoal);
+    padding: var(--space-sm) 0;
+    line-height: var(--line-height-relaxed);
+}
+
+/* Button positioning */
+.audience-card .btn {
+    width: 100%;
+    justify-content: center;
+}
+
+/* Responsive - 2 columns on tablet/desktop */
+@media screen and (min-width: 768px) {
+    .audience__grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3xl);
+    }
+}
